@@ -1,0 +1,720 @@
+body{
+  background-color: rgb(255, 255, 255);
+  margin: 0px;
+  overflow: hidden;
+
+  zoom: 100%;
+}
+
+/* 모달 창 디자인 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  margin-top: 400px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  text-align: center;
+  border-radius: 10px;
+}
+.modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#PW_Title{
+  color: rgb(108, 122, 153);
+  font-family: 'seolleimcool-SemiBold';
+}
+
+/* 모달창 비밀번호 입력 */
+#passwordInput{
+  margin-left: -50px;
+  height: 24px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgb(132, 146, 179);
+  outline: none;
+
+  color: rgb(132, 146, 179);
+
+  font-family: 'seolleimcool-SemiBold';
+}
+
+/* 모달창 확인버튼 */
+#confirmBtn{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* top: 16px; */
+  /* left: 74.5%; */
+
+  margin-top: 13.5px;
+  margin-left: 40px;
+
+  width: 70px;
+  height: 27.5px;
+  
+  border-radius: 10px;
+  border: 1px solid rgb(132, 146, 179);
+
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+}
+
+/* 비밀번호 오류 */
+#modalMessage{
+  display: none;
+
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgb(238, 149, 149);
+}
+
+
+#modalMessage02{
+  display: none;
+
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgb(238, 149, 149);
+}
+
+/* -------------------------------------------------- */
+
+/* 헤더 영역 */
+.header{
+  position:fixed;
+  width: 100vw;
+  height: 140px;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  box-shadow: 0px 0px 15px 4px rgb(209, 209, 209);
+}
+
+/* 헤더 영역의 글자 및 이미지 */
+#headerImg{
+  margin-top: 15px;
+  width: 340px;
+}
+
+/* -------------------------------------------------- */
+
+/* 왼쪽 사이드 프로필 영역 */
+.sideL_Profile{
+  width: 350px;
+  height: 79vh;
+  border-right: dotted 1.5px rgb(181, 181, 181);
+  margin-top: -80px;
+}
+
+/* 왼쪽 사이드 프로필 영역의 테이블 */
+#sideL_Profile_Table{
+  text-align: center;
+  margin-top: 250px;
+  width: 100%;
+}
+
+/* 왼쪽 사이드 프로필 영역의 이미지 */
+#sideL_Img{
+  margin-top: 10px;
+  width: 40%;
+  border-radius: 100px;
+  border: dotted 3px rgb(130, 130, 130);
+}
+
+/* 왼쪽 사이드 프로필 영역의 테이블 상단 환영인사 */
+#sideL_Profile_Table_td_title{
+  font-family: 'seolleimcool-SemiBold';
+  font-size: 20px;
+  /* padding-bottom: 10px; */
+  padding-top: 50px;
+  color: rgb(103, 103, 103);
+}
+
+#sideL_Profile_Table_td_titleName{
+  color: rgb(231, 172, 100);
+}
+
+/* 왼쪽 사이드 프로필 영역의 테이블 각 행 */
+#sideL_Profile_Table_td{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'KyoboHand';
+  color: rgb(103, 103, 103);
+}
+
+/* 왼쪽 사이드 프로필 영역의 개인 연락처 */
+#sideL_Profile_Table_td_insta,
+#sideL_Profile_Table_td_phone{
+  /* margin-top: 50px; */
+  padding-top: 8px;
+  padding-bottom: 5px;
+  font-family: 'KyoboHand';
+  color: rgb(223, 83, 83);
+}
+
+#sideL_Profile_Table_2{
+  text-align: center;
+  margin-top: 100px;
+  width: 100%;
+}
+
+/* -------------------------------------------------- */
+
+/* 정렬하기 */
+
+#Latest_Btn{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 25.3%;
+
+  width: 70px;
+  height: 26px;
+  
+  border: none;
+
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+}
+
+#Latest_Btn:active{
+  font-size: 12px;
+}
+
+#Old_Btn{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 29%;
+
+  width: 70px;
+  height: 26px;
+  
+  border: none;
+
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+}
+
+#Old_Btn:active{
+  font-size: 12px;
+}
+
+/* 새로고침 */
+
+#Reset_Btn{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 74.5%;
+
+  width: 70px;
+  height: 26px;
+  
+  border: none;
+
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+}
+
+#Reset_Btn:active{
+  font-size: 12px;
+}
+
+/* -------------------------------------------------- */
+
+/* 메세지 리스트 영역 */
+
+.List{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  width: 900px;
+  height: 500px;
+
+  border-top: dotted 1.5px rgb(181, 181, 181);
+  border-bottom: dotted 1.5px rgb(181, 181, 181);
+
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* 웹킷 기반 브라우저를 위한 스크롤바 스타일링 */
+.List::-webkit-scrollbar {
+  width: 5px; /* 스크롤바의 너비 */
+}
+
+.List::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);/* 스크롤바 트랙의 배경 색상 */
+}
+
+.List::-webkit-scrollbar-thumb {
+  background: rgba(155, 172, 211, 0.692); /* 스크롤바 썸의 배경 색상 */
+  border-radius: 5px;
+}
+
+/* -------------------------------------------------- */
+
+.main_Contents_List{
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  width: 890px;
+  height: 146px;
+
+  background-color: rgb(247, 223, 119);
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  box-shadow: 0px 2px 2px rgb(131, 131, 131);
+}
+
+.main_Contents_Relation{
+  margin-top: 2px;
+}
+
+
+#List_Relation{
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-family: 'seolleimcool-SemiBold';
+  
+  text-align: center;
+  /* -webkit-text-stroke: 0.6px rgb(88, 88, 88); */
+  
+  width: 80px;
+  margin-left: -2px;
+  
+  outline: none;
+  border: none;
+  
+  background-color: rgb(247, 223, 119);
+  /* background-color: rgb(121, 136, 172); */
+}
+
+#span_List_Relation{
+  color: rgb(202, 150, 8);
+  font-size: 14px;
+  font-family: 'seolleimcool-SemiBold';
+
+  margin-left: 10px;
+}
+
+#span_List_Relation2{
+  color: rgb(202, 150, 8);
+  font-size: 14px;
+  font-family: 'seolleimcool-SemiBold';
+
+  margin-left: -2px;
+}
+
+#List_NickName{
+  color: rgb(202, 150, 8);
+  font-size: 14px;
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: rgb(247, 223, 119);
+
+  outline: none;
+  border: none;
+}
+
+#List_Time{
+  width: 150px;
+
+  color: rgb(202, 150, 8);
+  font-size: 14px;
+  text-align: right;
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: rgb(247, 223, 119);
+
+  outline: none;
+  border: none;
+
+  margin-left: 340px;
+}
+
+#span_List_Time{
+  color: rgb(202, 150, 8);
+  font-size: 14px;
+  font-family: 'seolleimcool-SemiBold';
+
+  outline: none;
+  border: none;
+}
+
+
+#List_contents{
+  width: 97%;
+  height: 80px;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 2px;
+
+  border-radius: 5px;
+  border: none;
+
+  font-size: 18px;
+  color: rgb(129, 129, 129);
+
+  resize: none;
+  outline: none;
+  font-family: 'omyu_pretty';
+
+  background-color: rgb(255, 244, 187);
+}
+
+.main_Contents_Btn{
+  /* background-color: blue; */
+  margin-right: 10px;
+  
+}
+
+/* 삭제하기 버튼 */
+
+.List_Delete_Btn {
+  position: absolute;
+  
+  width: 100px;
+  height: 26px;
+
+  margin-left: 670px;
+  border-radius: 5px;
+  border: 1px solid rgb(202, 150, 8);
+
+  font-size: 14px;
+  color: rgb(202, 150, 8);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+
+}
+
+.List_Delete_Btn:active {
+  background-color: rgb(202, 150, 8);
+  color: white;
+  width: 99px;
+}
+
+
+/* 수정하기 버튼 */
+
+.List_Save_Btn {
+  position: absolute;
+
+  width: 100px;
+  height: 26px;
+
+  margin-left: 780px;
+  /* margin-top: -300px; */
+  border-radius: 5px;
+  border: 1px solid rgb(202, 150, 8);
+
+  font-size: 14px;
+  color: rgb(202, 150, 8);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+}
+
+.List_Save_Btn:active {
+  background-color: rgb(202, 150, 8);
+  color: white;
+  width: 99px;
+}
+
+/* 메세지 리스트 영역 */
+
+/* -------------------------------------------------- */
+
+/* 메세지 입력 안내 */
+#span_Relation{
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  font-family: 'seolleimcool-SemiBold';
+}
+
+#Relation{
+  font-size: 14px;
+  text-align: center;
+  color: rgb(255, 246, 208);
+  font-family: 'seolleimcool-SemiBold';
+
+  width: 65px;
+  
+  background-color: rgb(166, 182, 218);
+  border: none;
+  outline: none;
+}
+
+#NickName_Top{
+  font-size: 14px;
+  text-align: left;
+  color: rgb(255, 246, 208);
+  font-family: 'seolleimcool-SemiBold';
+
+  width: 130px;
+  
+  background-color: rgb(166, 182, 218);
+  border: none;
+  outline: none;
+}
+
+.main_Contents_Top{
+  text-align: center;
+}
+
+/* -------------------------------------------------- */
+
+/* 메세지 입력 영역 Div*/
+.main_Contents_Div {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 88%;
+  left: 50%;
+
+  width: 900px;
+  height: 155px;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+
+/* 메세지를 입력해주세요 */
+/* Div */
+.main_Contents_Message{
+  margin-top: 3px;
+  margin-left: 10px;
+}
+/* 내용 */
+#span_Message{
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 메세지를 입력해주세요 */
+
+
+/* 메세지 내용 입력 */
+#contents {
+  width: 97%;
+  height: 80px;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 2px;
+
+  border-radius: 5px;
+  border: 1px solid gray;
+
+  font-size: 18px;
+  color: rgb(106, 107, 109);
+
+  resize: none;
+  outline: none;
+  font-family: 'omyu_pretty';
+}
+/* 메세지 내용 입력 */
+
+/* -------------------------------------------------- */
+
+/* 메세지 영역 하단 */
+.main_Contents_Bottom {
+  margin-top: -2px;
+  margin-left: 10px;
+  width: 100%;
+}
+/* 메세지 영역 하단 */
+
+/* 비밀번호 글 */
+#span_Password{
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 비밀번호 글 */
+
+/* 비밀번호 입력 */
+#password {
+  font-size: 14px;
+  text-align: center;
+
+  width: 70px;
+  height: 20px;
+  margin-left: 2px;
+  margin-top: 6px;
+
+  outline: none;
+  border: 1px solid rgb(132, 146, 179);
+  border-radius: 10px;
+
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 비밀번호 입력 */
+
+/* 관계 글 */
+#span_Relation_Bottom{
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 관계 글 */
+
+/* 관계 입력 */
+#relation_Bottom {
+  font-size: 14px;
+  text-align: center;
+
+  width: 100px;
+  height: 20px;
+  margin-left: 2px;
+  margin-top: 6px;
+
+  outline: none;
+  border: 1px solid rgb(132, 146, 179);
+  border-radius: 10px;
+
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 닉네임 입력 */
+
+/* 닉네임 글 */
+#span_NickName{
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 닉네임 글 */
+
+/* 닉네임 입력 */
+#nickname_Bottom {
+  font-size: 14px;
+  text-align: center;
+
+  width: 140px;
+  height: 20px;
+  margin-left: 2px;
+  margin-top: 6px;
+
+  outline: none;
+  border: 1px solid rgb(132, 146, 179);
+  border-radius: 10px;
+
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+}
+/* 닉네임 입력 */
+
+/* 저장 버튼 */
+#saveBtn {
+  width: 50px;
+  height: 26px;
+
+  margin-top: 3px;
+  margin-left: 125px;
+  border-radius: 5px;
+  border: 1px solid rgb(132, 146, 179);
+
+  font-size: 14px;
+  color: rgb(132, 146, 179);
+  font-family: 'seolleimcool-SemiBold';
+
+  background-color: white;
+}
+
+#saveBtn:active {
+  background-color: rgb(132, 146, 179);
+  color: white;
+  width: 48px;
+}
+/* 저장 버튼 */
+
+
+#card_arrow {
+  width: 130px;
+  
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 85%;
+  left: 85%;
+}
+
+
+/* -------------------------------------------------- */
+
+/* 뷰포트의 가로너비 768px 이하인 경우 적용 (모바일 환경) */
+@media (max-width: 768px) {
+
+  /* ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ */
+
+
+
+}
+
+/* -------------------------------------------------- */
+/* 교보손글씨 체 */
+@font-face {
+  font-family: 'KyoboHand';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 설레임 체 */
+@font-face {
+  font-family: 'seolleimcool-SemiBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/seolleimcool-SemiBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 오뮤 다예쁨 체 */
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

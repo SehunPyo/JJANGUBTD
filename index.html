@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <!-- ▼ FireStore 연결 ▼ -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore-compat.js"></script>
+
+    <!-- ▼ CSS(웹사이트의 스타일) 연결 ▼ -->
+    <link rel="stylesheet" text="text/css" href="./style.css">
+    <!-- ▼ CSS(생일카드 스타일) 연결 ▼ -->
+    <link rel="stylesheet" text="text/css" href="./letter.css">
+    <!-- ▼ 웹사이트의 제목 ▼ -->
+    <title>ㅇㅇㅇ's BirthDay</title>
+</head>
+<body>
+
+
+
+
+    <!-- 01. 웹사이트의 헤더 -->
+    <div class="header">
+        <!-- 1-1. 헤더에 이미지 적용 -->
+        <img id="headerImg" src="./Source/headerImg4.png">
+    </div>
+
+    <!-- 02. 웹사이트의 왼쪽 사이드 -->
+    <div class="sideL">
+        <!-- 2-2. 사이드 프로필 -->
+        <div class="sideL_Profile">
+            <table id="sideL_Profile_Table">
+                <tr>
+                    <td id="sideL_Profile_Table_td_title">
+                        🥳 안녕하세요! 🎉 <br>
+                        오늘의 주인공, <span id="sideL_Profile_Table_td_titleName">짱구</span>입니다!
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- 2-1. 사이드 프로필 이미지 -->
+                        <img id="sideL_Img" src="./Source/profile.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td">
+                        #신짱구 #940505
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td">
+                        #B형 #ENFJ #떡잎마을 방범대
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td">
+                        #솔로 #예쁜 누나가 이상형
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td">
+                        #푸딩 좋아 #액션가면♥
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td">
+                        #호기심 많음 #흰둥이 좋아
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td">
+                        #가족놀이 싫어 #피망 싫어
+                    </td>
+                </tr>
+
+            <table id="sideL_Profile_Table_2">
+                <tr>
+                    <td id="sideL_Profile_Table_td_insta">
+                        Instagram : Im_ShinJJANG
+                    </td>
+                </tr>
+                <tr>
+                    <td id="sideL_Profile_Table_td_phone">
+                        Phone     : 010-1111-2222
+                    </td>
+                </tr>
+        </div>
+    </div>
+
+    <!-- 정렬 설정 -->
+    <div>
+        <button id="Latest_Btn">최신순</button>
+        <button id="Old_Btn">오래된순</button>
+        <button id="Reset_Btn">새로고침</button>
+    </div>
+
+
+    <!-- 03. 웹사이트의 중앙 -->
+    <!-- 3-1. 메세지 리스트 영역 -->
+    <div class="List">
+        <div class="main_Contents_List">
+            <div class="main_Contents_Relation">
+                <span id="span_List_Relation">
+                    짱구와는                
+                </span>
+                <input type="text"     id="List_Relation" maxlength="6" spellcheck="false" readonly>
+
+                <span id="span_List_Relation2">
+                    관계, 
+                </span>
+                <input type="text"     id="List_NickName" maxlength="10" spellcheck="false" readonly>
+                
+                <input type="text"     id="List_Time" maxlength="11" spellcheck="false" readonly>
+                <span id="span_List_Time">
+                    작성
+                </span>
+            </div>
+            <div class="main_Contents_Top">
+                <!-- 메세지 내용 -->
+                <textarea id="List_contents" spellcheck="false"></textarea>
+            </div>
+            <div class="main_Contents_Btn">
+                <button id="List_Delete_Btn">삭제하기</button>
+                <button id="List_Save_Btn">수정하기</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ★ 모달 창 ★ -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <h4 id="PW_Title">😏해당 메세지의 비밀번호를 입력해주세요😏</h4>
+          <input type="password" id="passwordInput" placeholder="비밀번호" maxlength="10">
+          <button id="confirmBtn">확인</button>
+          <div id="modalMessage">비밀번호를 입력해주세요!</div>
+          <div id="modalMessage02">비밀번호가 일치하지 않습니다!</div>
+        </div>
+    </div>
+
+
+    <!-- 04. 웹사이트의 하단 -->
+    <!-- 4-1. 메세지 입력 영역 -->
+    <div class="main_Contents_Div">
+        <div class="main_Contents_Message">
+            <span id="span_Message">
+                메세지를 입력해주세요!      
+            </span>
+        </div>
+        <div class="main_Contents_Top">
+            <textarea id="contents" spellcheck="false" ></textarea>
+        </div>
+        <div class="main_Contents_Bottom">
+            <span id="span_Password">
+                비밀번호 (4~10자리)
+            </span>
+            <input type="password" id="password" minlength="4" maxlength="10" spellcheck="false">
+            
+            &nbsp;
+            <span id="span_Relation_Bottom">
+                관계 (2~6 자리)
+            </span>
+            <input type="text"      id="relation_Bottom" minlength="2" maxlength="6" spellcheck="false">
+            
+            &nbsp;
+            <span id="span_NickName">
+                닉네임 (2~10자리)
+            </span>
+            <input type="text"      id="nickname_Bottom" minlength="2" maxlength="10" spellcheck="false">
+
+            <button id="saveBtn">저장</button>
+        </div>
+    </div>    
+
+
+    <!-- 05. 웹사이트 카드 -->
+    <div class="card">
+        <div class="imgBox">
+          <div class="bark"></div>
+          <img src="./Source/333.png">
+        </div>
+        <div class="details">
+          <h4 class="color1">오늘은 05월 05일,</h2>
+          <h4 class="color2 margin">짱구의 다섯 번째 생일입니다🎂</h3>
+          <p>안녕하세요,</p>
+          <p>짱구 입니다 🥰</p>
+          <p>오늘 정말 많은 분들께</p>
+          <p>과분한 축하를 받았어요..(훌쩍)</p>
+          <p>잊지않고 생일을 축하해주셔서</p>
+          <p>제겐 정말 믿기 힘들만큼 따듯한 생일입니다.</p>
+          <div class="text-right-div">
+            <p class="text-right">정말 감사합니다 ! :)</p>
+            <p class="text-right">♥ 짱구 ♥</p>
+          </div>
+        </div>
+      </div>
+
+    <div>
+        <img src="./Source/card_arrow.png" id="card_arrow">
+    </div>
+
+
+
+    <script src="./script.js"></script>
+    
+    <!-- firebase.js 파일 로드 -->
+    <script src="./firebase.js"></script>
+
+</body>
+</html>
